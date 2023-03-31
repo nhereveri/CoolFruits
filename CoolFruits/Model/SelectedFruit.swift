@@ -9,12 +9,17 @@
 import Foundation
 
 class SelectedFruit {
-    private(set) static var fruit: FruitModel?
-    
-    private init() {
+  static let shared = SelectedFruit()
+  private(set) var fruit: FruitModel?
+  private static let lock = NSLock()
+  
+  private init() {}
+  
+  func setFruit(_ fruit: FruitModel) {
+    SelectedFruit.lock.lock()
+    defer {
+      SelectedFruit.lock.unlock()
     }
-    
-    static func setFruit(_ fruit: FruitModel) {
-        self.fruit = fruit
-    }
+    self.fruit = fruit
+  }
 }

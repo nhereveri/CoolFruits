@@ -15,9 +15,9 @@ public class FruitDetailCitrusViewController: UIViewController {
   
   override public func viewDidLoad() {
     super.viewDidLoad()
-    familyLabel.text = "Family: \(SelectedFruit.fruit!.family)"
-    genusLabel.text = "Genus: \(SelectedFruit.fruit!.genus)"
-    nutritionLabel.text = getNutritionText(selectedFruit: SelectedFruit.fruit!)
+    familyLabel.text = "Family: \(SelectedFruit.shared.fruit!.family)"
+    genusLabel.text = "Genus: \(SelectedFruit.shared.fruit!.genus)"
+    nutritionLabel.text = getNutritionText(selectedFruit: SelectedFruit.shared.fruit!)
   }
   
   

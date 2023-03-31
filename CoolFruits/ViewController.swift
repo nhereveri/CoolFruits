@@ -54,9 +54,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     // Preguntamos si cumple el protocolo FruitModel y luego usamos el setter
     if let selectedFruit = viewModel.fruits?[indexPath.row] as? FruitModel {
-        SelectedFruit.setFruit(selectedFruit)
+      SelectedFruit.shared.setFruit(selectedFruit)
     }
-    if SelectedFruit.fruit?.genus == "Citrus" {
+    if SelectedFruit.shared.fruit?.genus == "Citrus" {
       navigateToCitrusDetail()
     } else {
       navigateToDetail()
@@ -66,7 +66,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
   
   func navigateToCitrusDetail() {
     let vc = FruitDetailViewController(nibName: "FruitDetailCitrusViewController", bundle: nil)
-    vc.title = SelectedFruit.fruit?.name
+    vc.title = SelectedFruit.shared.fruit?.name
     if let navigator = navigationController {
       navigator.pushViewController(vc, animated: true)
     }
@@ -74,7 +74,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
   
   func navigateToDetail() {
     let vc = FruitDetailViewController(nibName: "FruitDetailViewController", bundle: nil)
-    vc.title = SelectedFruit.fruit?.name
+    vc.title = SelectedFruit.shared.fruit?.name
     if let navigator = navigationController {
       navigator.pushViewController(vc, animated: true)
     }
