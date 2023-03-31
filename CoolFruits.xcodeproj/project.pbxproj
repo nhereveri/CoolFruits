@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		520CA21129D6800C002985C3 /* FruitModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520CA21029D6800C002985C3 /* FruitModelTest.swift */; };
 		9D15A43228877F7600896AC4 /* FruitCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D15A43128877F7600896AC4 /* FruitCell.swift */; };
 		9D15A43428877FBE00896AC4 /* FruitCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D15A43328877FBE00896AC4 /* FruitCell.xib */; };
 		9D15A4372887884300896AC4 /* FruitDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D15A4362887884300896AC4 /* FruitDetailViewController.swift */; };
@@ -24,7 +25,19 @@
 		9DA2B0952889886000C8EC03 /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA2B0942889886000C8EC03 /* RequestManager.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		520CA21229D6800C002985C3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9D6DC7D4287E1E0300D96A6D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9D6DC7DB287E1E0300D96A6D;
+			remoteInfo = CoolFruits;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		520CA20E29D6800C002985C3 /* FruitModelTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FruitModelTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		520CA21029D6800C002985C3 /* FruitModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitModelTest.swift; sourceTree = "<group>"; };
 		9D15A43128877F7600896AC4 /* FruitCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitCell.swift; sourceTree = "<group>"; };
 		9D15A43328877FBE00896AC4 /* FruitCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FruitCell.xib; sourceTree = "<group>"; };
 		9D15A4362887884300896AC4 /* FruitDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitDetailViewController.swift; sourceTree = "<group>"; };
@@ -45,6 +58,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		520CA20B29D6800C002985C3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9D6DC7D9287E1E0300D96A6D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -55,6 +75,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		520CA20F29D6800C002985C3 /* FruitModelTest */ = {
+			isa = PBXGroup;
+			children = (
+				520CA21029D6800C002985C3 /* FruitModelTest.swift */,
+			);
+			path = FruitModelTest;
+			sourceTree = "<group>";
+		};
 		9D15A43028877F5A00896AC4 /* TableView */ = {
 			isa = PBXGroup;
 			children = (
@@ -88,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				9D6DC7DE287E1E0300D96A6D /* CoolFruits */,
+				520CA20F29D6800C002985C3 /* FruitModelTest */,
 				9D6DC7DD287E1E0300D96A6D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -96,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				9D6DC7DC287E1E0300D96A6D /* CoolFruits.app */,
+				520CA20E29D6800C002985C3 /* FruitModelTest.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -121,6 +151,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		520CA20D29D6800C002985C3 /* FruitModelTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 520CA21429D6800C002985C3 /* Build configuration list for PBXNativeTarget "FruitModelTest" */;
+			buildPhases = (
+				520CA20A29D6800C002985C3 /* Sources */,
+				520CA20B29D6800C002985C3 /* Frameworks */,
+				520CA20C29D6800C002985C3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				520CA21329D6800C002985C3 /* PBXTargetDependency */,
+			);
+			name = FruitModelTest;
+			productName = FruitModelTest;
+			productReference = 520CA20E29D6800C002985C3 /* FruitModelTest.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		9D6DC7DB287E1E0300D96A6D /* CoolFruits */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9D6DC7F0287E1E0600D96A6D /* Build configuration list for PBXNativeTarget "CoolFruits" */;
@@ -145,9 +193,13 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1330;
+				LastSwiftUpdateCheck = 1420;
 				LastUpgradeCheck = 1330;
 				TargetAttributes = {
+					520CA20D29D6800C002985C3 = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = 9D6DC7DB287E1E0300D96A6D;
+					};
 					9D6DC7DB287E1E0300D96A6D = {
 						CreatedOnToolsVersion = 13.3.1;
 					};
@@ -167,11 +219,19 @@
 			projectRoot = "";
 			targets = (
 				9D6DC7DB287E1E0300D96A6D /* CoolFruits */,
+				520CA20D29D6800C002985C3 /* FruitModelTest */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		520CA20C29D6800C002985C3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9D6DC7DA287E1E0300D96A6D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -188,6 +248,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		520CA20A29D6800C002985C3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				520CA21129D6800C002985C3 /* FruitModelTest.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9D6DC7D8287E1E0300D96A6D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -205,6 +273,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		520CA21329D6800C002985C3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9D6DC7DB287E1E0300D96A6D /* CoolFruits */;
+			targetProxy = 520CA21229D6800C002985C3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		9D6DC7E5287E1E0300D96A6D /* Main.storyboard */ = {
@@ -226,6 +302,46 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		520CA21529D6800C002985C3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XJJJ7BAS58;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = cl.hereveri.FruitModelTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CoolFruits.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/CoolFruits";
+			};
+			name = Debug;
+		};
+		520CA21629D6800C002985C3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XJJJ7BAS58;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = cl.hereveri.FruitModelTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CoolFruits.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/CoolFruits";
+			};
+			name = Release;
+		};
 		9D6DC7EE287E1E0600D96A6D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -403,6 +519,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		520CA21429D6800C002985C3 /* Build configuration list for PBXNativeTarget "FruitModelTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				520CA21529D6800C002985C3 /* Debug */,
+				520CA21629D6800C002985C3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		9D6DC7D7287E1E0300D96A6D /* Build configuration list for PBXProject "CoolFruits" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
