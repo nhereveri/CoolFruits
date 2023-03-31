@@ -9,7 +9,12 @@
 import Foundation
 
 class SelectedFruit {
-  static var fruit: FruitModel?
-  private init() {
-  }
+    private(set) static var fruit: FruitModel?
+    
+    private init() {
+    }
+    
+    static func setFruit(_ fruit: FruitModel) {
+        self.fruit = fruit
+    }
 }

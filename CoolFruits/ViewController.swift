@@ -52,7 +52,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
   
   
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    SelectedFruit.fruit = viewModel.fruits?[indexPath.row]
+    // Preguntamos si cumple el protocolo FruitModel y luego usamos el setter
+    if let selectedFruit = viewModel.fruits?[indexPath.row] as? FruitModel {
+        SelectedFruit.setFruit(selectedFruit)
+    }
     if SelectedFruit.fruit?.genus == "Citrus" {
       navigateToCitrusDetail()
     } else {
