@@ -8,7 +8,11 @@
 
 import Foundation
 
-class SelectedFruit {
+protocol SelectedFruitProvider {
+  var fruit: FruitModel? { get }
+}
+
+class SelectedFruit: SelectedFruitProvider {
   // Explicitando la implementación de Singleton
   static let shared = SelectedFruit()
   private(set) var fruit: FruitModel?

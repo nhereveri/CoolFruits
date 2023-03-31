@@ -9,27 +9,30 @@
 import Foundation
 import UIKit
 
-public class FruitDetailViewController: UIViewController {
+class FruitDetailViewController: UIViewController {
   @IBOutlet weak var familyLabel: UILabel!
   @IBOutlet weak var genusLabel: UILabel!
   @IBOutlet weak var nutritionLabel: UILabel!
   
+  var selectedFruitProvider: SelectedFruitProvider = SelectedFruit.shared
+
   override public func viewDidLoad() {
     super.viewDidLoad()
-    familyLabel.text = "Family: \(SelectedFruit.shared.fruit!.family)"
-    genusLabel.text = "Genus: \(SelectedFruit.shared.fruit!.genus)"
-    nutritionLabel.text = getNutritionText(selectedFruit: SelectedFruit.shared.fruit!)
-  }
-  
-  
-  func getNutritionText(selectedFruit: FruitModel) -> String {
-    var text = String()
-    text += "Sugar: " + String(selectedFruit.nutritions.sugar)
-    text += "\n"
-    text += "Calories: " + String(selectedFruit.nutritions.calories)
-    text += "\n"
-    text += "Fat: " + String(selectedFruit.nutritions.fat)
-    return text
+    guard let selectedFruit = selectedFruitProvider.fruit else { return }
+    familyLabel.text = "Family: \(selectedFruit.family)"
+    genusLabel.text = "Genus: \(selectedFruit.genus)"
+    nutritionLabel.text = selectedFruit.getNutritionText()
   }
 }
 
+extension FruitModel {
+  func getNutritionText() -> String {
+    var text = String()
+    text += "Sugar: " + String(nutritions.sugar)
+    text += "\n"
+    text += "Calories: " + String(nutritions.calories)
+    text += "\n"
+    text += "Fat: " + String(nutritions.fat)
+    return text
+  }
+}
