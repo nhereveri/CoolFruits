@@ -47,3 +47,26 @@ struct NutritionsModel: Codable {
     case carbohydrates, protein, fat, calories, sugar
   }
 }
+
+// Podemos usar una extensión para incorporar el protocolo de comparación en lugar de modificar la estructura previa
+// Podría ir en otro archivo si es mucho el código a implementar
+extension FruitModel: Equatable {
+  static func ==(lhs: FruitModel, rhs: FruitModel) -> Bool {
+    return lhs.id == rhs.id &&
+    lhs.genus == rhs.genus &&
+    lhs.name == rhs.name &&
+    lhs.family == rhs.family &&
+    lhs.order == rhs.order &&
+    lhs.nutritions == rhs.nutritions
+  }
+}
+
+extension NutritionsModel: Equatable {
+  static func ==(lhs: NutritionsModel, rhs: NutritionsModel) -> Bool {
+    return lhs.carbohydrates == rhs.carbohydrates &&
+    lhs.protein == rhs.protein &&
+    lhs.fat == rhs.fat &&
+    lhs.calories == rhs.calories &&
+    lhs.sugar == rhs.sugar
+  }
+}
