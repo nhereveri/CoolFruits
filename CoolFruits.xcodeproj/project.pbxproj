@@ -75,12 +75,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		520CA20F29D6800C002985C3 /* FruitModelTest */ = {
+		520CA20F29D6800C002985C3 /* CoolFruitsTest */ = {
+			isa = PBXGroup;
+			children = (
+				520CA21729D69045002985C3 /* Model */,
+			);
+			path = CoolFruitsTest;
+			sourceTree = "<group>";
+		};
+		520CA21729D69045002985C3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				520CA21029D6800C002985C3 /* FruitModelTest.swift */,
 			);
-			path = FruitModelTest;
+			path = Model;
 			sourceTree = "<group>";
 		};
 		9D15A43028877F5A00896AC4 /* TableView */ = {
@@ -116,7 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				9D6DC7DE287E1E0300D96A6D /* CoolFruits */,
-				520CA20F29D6800C002985C3 /* FruitModelTest */,
+				520CA20F29D6800C002985C3 /* CoolFruitsTest */,
 				9D6DC7DD287E1E0300D96A6D /* Products */,
 			);
 			sourceTree = "<group>";
