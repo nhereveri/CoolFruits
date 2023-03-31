@@ -97,4 +97,26 @@ final class FruitModelTest: XCTestCase {
     // Verificar que el objeto FruitModel cumple con Nutritional
     XCTAssertTrue(fruit is Nutritional, "FruitModel does not conform to Nutritional")
   }
+  
+  func testFruitModelPropertyValues() {
+    // Crear un objeto NutritionsModel
+    let nutritions = NutritionsModel(carbohydrates: 15.0, protein: 0.3, fat: 0.2, calories: 52, sugar: 10.0)
+    
+    // Crear un objeto FruitModel
+    let fruit = FruitModel(id: 1, genus: "Malus", name: "Apple", family: "Rosaceae", order: "Rosales", nutritions: nutritions)
+    
+    // Verificar los valores de las propiedades de FruitModel
+    XCTAssertEqual(fruit.id, 1, "FruitModel id property value is incorrect")
+    XCTAssertEqual(fruit.genus, "Malus", "FruitModel genus property value is incorrect")
+    XCTAssertEqual(fruit.name, "Apple", "FruitModel name property value is incorrect")
+    XCTAssertEqual(fruit.family, "Rosaceae", "FruitModel family property value is incorrect")
+    XCTAssertEqual(fruit.order, "Rosales", "FruitModel order property value is incorrect")
+    
+    // Verificar los valores de las propiedades de NutritionsModel
+    XCTAssertEqual(fruit.nutritions.carbohydrates, 15.0, "NutritionsModel carbohydrates property value is incorrect")
+    XCTAssertEqual(fruit.nutritions.protein, 0.3, "NutritionsModel protein property value is incorrect")
+    XCTAssertEqual(fruit.nutritions.fat, 0.2, "NutritionsModel fat property value is incorrect")
+    XCTAssertEqual(fruit.nutritions.calories, 52, "NutritionsModel calories property value is incorrect")
+    XCTAssertEqual(fruit.nutritions.sugar, 10.0, "NutritionsModel sugar property value is incorrect")
+  }
 }
