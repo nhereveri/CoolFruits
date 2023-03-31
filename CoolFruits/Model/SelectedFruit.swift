@@ -9,6 +9,7 @@
 import Foundation
 
 class SelectedFruit {
+  // Explicitando la implementación de Singleton
   static let shared = SelectedFruit()
   private(set) var fruit: FruitModel?
   private static let lock = NSLock()
@@ -20,6 +21,6 @@ class SelectedFruit {
     defer {
       SelectedFruit.lock.unlock()
     }
-    self.fruit = fruit
+    self.fruit = fruit // sección crítica que necesita ser controlada
   }
 }

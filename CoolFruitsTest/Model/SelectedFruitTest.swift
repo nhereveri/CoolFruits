@@ -28,16 +28,16 @@ final class SelectedFruitTest: XCTestCase {
   }
   
   func testSetFruit() {
-    SelectedFruit.setFruit(fruit1)
-    XCTAssertNotNil(SelectedFruit.fruit)
-    XCTAssertEqual(SelectedFruit.fruit, fruit1)
+    SelectedFruit.shared.setFruit(fruit1)
+    XCTAssertNotNil(SelectedFruit.shared.fruit)
+    XCTAssertEqual(SelectedFruit.shared.fruit, fruit1)
   }
   
   func testChangeSelectedFruit() {
-    SelectedFruit.setFruit(fruit1)
-    XCTAssertEqual(SelectedFruit.fruit, fruit1)
+    SelectedFruit.shared.setFruit(fruit1)
+    XCTAssertEqual(SelectedFruit.shared.fruit, fruit1)
     
-    SelectedFruit.setFruit(fruit2)
-    XCTAssertEqual(SelectedFruit.fruit, fruit2)
+    SelectedFruit.shared.setFruit(fruit2)
+    XCTAssertEqual(SelectedFruit.shared.fruit, fruit2)
   }
 }
