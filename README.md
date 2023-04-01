@@ -8,3 +8,10 @@ Un amigo muy cercano a ti contrató una empresa para que le desarrollara una peq
 * Los tests unitarios quedan a tu criterio.
 
 En caso de cualquier duda o inconveniente estoy para ayudarte lalejzapata@falabella.cl, saludos!
+
+## Comentarios
+
+- Existen muchos principios SOLID y DRY que no se respetaban. Mayormente fueron los de "Separar las responsabilidades", "Abierto a extensión, cerrado a modificación" e "Inyección de dependencias". Por lo general se utilizan protocolos para solucionar la mayor parte de estos problemas.
+- Un par de secciones críticas necesitan un control de concurrencia. Se ha escogido NSLock en lugar de DispatchQueue, ya que se conoce la porción de código con potenciales errores.
+- Se añadieron algunos test unitarios. Principalmente asociados al modelo o formatos de presentación de texto. No se crearon test de interfaces, ya que requerian una inyección de dependencia algo larga de implementar.
+- Se organiza el código fuente para cubrir un poco de Clean y MVVM.
