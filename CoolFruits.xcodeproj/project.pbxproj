@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		520CA21129D6800C002985C3 /* FruitModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520CA21029D6800C002985C3 /* FruitModelTest.swift */; };
 		520CA21A29D72659002985C3 /* SelectedFruitTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520CA21829D725E6002985C3 /* SelectedFruitTest.swift */; };
+		520CA21D29D7DB5A002985C3 /* FruitCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520CA21C29D7DB5A002985C3 /* FruitCellTests.swift */; };
+		520CA21F29D7DD0A002985C3 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520CA21E29D7DD0A002985C3 /* ViewModel.swift */; };
 		9D15A43228877F7600896AC4 /* FruitCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D15A43128877F7600896AC4 /* FruitCell.swift */; };
 		9D15A43428877FBE00896AC4 /* FruitCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D15A43328877FBE00896AC4 /* FruitCell.xib */; };
 		9D15A4372887884300896AC4 /* FruitDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D15A4362887884300896AC4 /* FruitDetailViewController.swift */; };
@@ -39,6 +41,8 @@
 		520CA20E29D6800C002985C3 /* FruitModelTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FruitModelTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		520CA21029D6800C002985C3 /* FruitModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitModelTest.swift; sourceTree = "<group>"; };
 		520CA21829D725E6002985C3 /* SelectedFruitTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedFruitTest.swift; sourceTree = "<group>"; };
+		520CA21C29D7DB5A002985C3 /* FruitCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitCellTests.swift; sourceTree = "<group>"; };
+		520CA21E29D7DD0A002985C3 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		9D15A43128877F7600896AC4 /* FruitCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitCell.swift; sourceTree = "<group>"; };
 		9D15A43328877FBE00896AC4 /* FruitCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FruitCell.xib; sourceTree = "<group>"; };
 		9D15A4362887884300896AC4 /* FruitDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitDetailViewController.swift; sourceTree = "<group>"; };
@@ -78,6 +82,7 @@
 		520CA20F29D6800C002985C3 /* CoolFruitsTest */ = {
 			isa = PBXGroup;
 			children = (
+				520CA21B29D7DB33002985C3 /* TableView */,
 				520CA21729D69045002985C3 /* Model */,
 			);
 			path = CoolFruitsTest;
@@ -90,6 +95,14 @@
 				520CA21829D725E6002985C3 /* SelectedFruitTest.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		520CA21B29D7DB33002985C3 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				520CA21C29D7DB5A002985C3 /* FruitCellTests.swift */,
+			);
+			path = TableView;
 			sourceTree = "<group>";
 		};
 		9D15A43028877F5A00896AC4 /* TableView */ = {
@@ -147,6 +160,7 @@
 				9D6DC7DF287E1E0300D96A6D /* AppDelegate.swift */,
 				9D6DC7E1287E1E0300D96A6D /* SceneDelegate.swift */,
 				9D6DC7E3287E1E0300D96A6D /* ViewController.swift */,
+				520CA21E29D7DD0A002985C3 /* ViewModel.swift */,
 				9DA2B0942889886000C8EC03 /* RequestManager.swift */,
 				9D6DC7E5287E1E0300D96A6D /* Main.storyboard */,
 				9D6DC7E8287E1E0600D96A6D /* Assets.xcassets */,
@@ -260,6 +274,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				520CA21D29D7DB5A002985C3 /* FruitCellTests.swift in Sources */,
 				520CA21129D6800C002985C3 /* FruitModelTest.swift in Sources */,
 				520CA21A29D72659002985C3 /* SelectedFruitTest.swift in Sources */,
 			);
@@ -270,6 +285,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D15A43228877F7600896AC4 /* FruitCell.swift in Sources */,
+				520CA21F29D7DD0A002985C3 /* ViewModel.swift in Sources */,
 				9DA2B0932889883E00C8EC03 /* SelectedFruit.swift in Sources */,
 				9D6DC7E4287E1E0300D96A6D /* ViewController.swift in Sources */,
 				9D6DC7E0287E1E0300D96A6D /* AppDelegate.swift in Sources */,

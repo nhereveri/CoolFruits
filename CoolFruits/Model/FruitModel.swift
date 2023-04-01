@@ -70,3 +70,15 @@ extension NutritionsModel: Equatable {
     lhs.sugar == rhs.sugar
   }
 }
+
+extension FruitModel {
+  func getNutritionText() -> String {
+    var text = String()
+    text += "Sugar: " + String(nutritions.sugar)
+    text += "\n"
+    text += "Calories: " + String(nutritions.calories)
+    text += "\n"
+    text += "Fat: " + String(nutritions.fat)
+    return text
+  }
+}

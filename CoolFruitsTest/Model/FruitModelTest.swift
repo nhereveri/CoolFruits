@@ -119,4 +119,25 @@ final class FruitModelTest: XCTestCase {
     XCTAssertEqual(fruit.nutritions.calories, 52, "NutritionsModel calories property value is incorrect")
     XCTAssertEqual(fruit.nutritions.sugar, 10.0, "NutritionsModel sugar property value is incorrect")
   }
+  
+  func testGetNutritionText() {
+    // Crear un objeto NutritionsModel
+    let nutritions = NutritionsModel(carbohydrates: 15.0, protein: 0.3, fat: 0.2, calories: 52, sugar: 10.0)
+    
+    // Crear un objeto FruitModel
+    let fruit = FruitModel(id: 1, genus: "Malus", name: "Apple", family: "Rosaceae", order: "Rosales", nutritions: nutritions)
+    
+    // Llamar a la función getNutritionText
+    let nutritionText = fruit.getNutritionText()
+    
+    // Definir el resultado esperado
+    let expectedText = """
+          Sugar: 10.0
+          Calories: 52
+          Fat: 0.2
+          """
+    
+    // Asegurar que el resultado de la función sea igual al resultado esperado
+    XCTAssertEqual(nutritionText, expectedText, "getNutritionText function output does not match the expected value")
+  }
 }

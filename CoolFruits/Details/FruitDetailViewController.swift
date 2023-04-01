@@ -16,23 +16,13 @@ class FruitDetailViewController: UIViewController {
   
   var selectedFruitProvider: SelectedFruitProvider = SelectedFruit.shared
 
+  // Muy extenso implementar un test para esto. Necesitaría inyectar dependencias…
+  // creo que se escaparía al propósito del ejercicio
   override public func viewDidLoad() {
     super.viewDidLoad()
     guard let selectedFruit = selectedFruitProvider.fruit else { return }
     familyLabel.text = "Family: \(selectedFruit.family)"
     genusLabel.text = "Genus: \(selectedFruit.genus)"
     nutritionLabel.text = selectedFruit.getNutritionText()
-  }
-}
-
-extension FruitModel {
-  func getNutritionText() -> String {
-    var text = String()
-    text += "Sugar: " + String(nutritions.sugar)
-    text += "\n"
-    text += "Calories: " + String(nutritions.calories)
-    text += "\n"
-    text += "Fat: " + String(nutritions.fat)
-    return text
   }
 }
