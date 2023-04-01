@@ -105,6 +105,41 @@
 			path = TableView;
 			sourceTree = "<group>";
 		};
+		520CA22029D7DE03002985C3 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				520CA22329D7DEC1002985C3 /* MainView */,
+				9D15A4352887882E00896AC4 /* Details */,
+				9D15A43028877F5A00896AC4 /* TableView */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		520CA22129D7DE2B002985C3 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				9DA2B0942889886000C8EC03 /* RequestManager.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		520CA22229D7DE83002985C3 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				9D15A43A2887895500896AC4 /* Model */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		520CA22329D7DEC1002985C3 /* MainView */ = {
+			isa = PBXGroup;
+			children = (
+				9D6DC7E3287E1E0300D96A6D /* ViewController.swift */,
+				520CA21E29D7DD0A002985C3 /* ViewModel.swift */,
+			);
+			path = MainView;
+			sourceTree = "<group>";
+		};
 		9D15A43028877F5A00896AC4 /* TableView */ = {
 			isa = PBXGroup;
 			children = (
@@ -154,14 +189,11 @@
 		9D6DC7DE287E1E0300D96A6D /* CoolFruits */ = {
 			isa = PBXGroup;
 			children = (
-				9D15A43A2887895500896AC4 /* Model */,
-				9D15A4352887882E00896AC4 /* Details */,
-				9D15A43028877F5A00896AC4 /* TableView */,
+				520CA22229D7DE83002985C3 /* Domain */,
+				520CA22129D7DE2B002985C3 /* Data */,
+				520CA22029D7DE03002985C3 /* Presentation */,
 				9D6DC7DF287E1E0300D96A6D /* AppDelegate.swift */,
 				9D6DC7E1287E1E0300D96A6D /* SceneDelegate.swift */,
-				9D6DC7E3287E1E0300D96A6D /* ViewController.swift */,
-				520CA21E29D7DD0A002985C3 /* ViewModel.swift */,
-				9DA2B0942889886000C8EC03 /* RequestManager.swift */,
 				9D6DC7E5287E1E0300D96A6D /* Main.storyboard */,
 				9D6DC7E8287E1E0600D96A6D /* Assets.xcassets */,
 				9D6DC7EA287E1E0600D96A6D /* LaunchScreen.storyboard */,
