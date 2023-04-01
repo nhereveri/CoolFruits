@@ -15,6 +15,7 @@ public class HomeViewModel {
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
   
   var viewModel: HomeViewModel = HomeViewModel()
+  var selectedFruit: FruitModel?
   @IBOutlet weak var fruitsTableView: UITableView!
   
   override func viewDidLoad() {
@@ -27,7 +28,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     self.navigationController?.navigationBar.topItem?.title = "Fruitspedia"
     self.navigationController?.navigationBar.tintColor = UIColor.black
     
-    RequestManager.shared.getAllFruts { fruits, error in
+    RequestManager.shared.getAllFruits { fruits, error in
       self.viewModel.fruits = fruits
       DispatchQueue.main.async {
         self.fruitsTableView.reloadData()
@@ -50,7 +51,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     return cell!
   }
   
-  
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     // Preguntamos si cumple el protocolo FruitModel y luego usamos el setter
     if let selectedFruit = viewModel.fruits?[indexPath.row] as? FruitModel {
@@ -62,7 +62,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
       navigateToDetail()
     }
   }
-  var selectedFruit: FruitModel?
   
   func navigateToCitrusDetail() {
     let vc = FruitDetailViewController(nibName: "FruitDetailCitrusViewController", bundle: nil)
