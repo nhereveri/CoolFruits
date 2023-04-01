@@ -9,12 +9,27 @@
 import UIKit
 
 public class HomeViewModel {
-  var fruits: [FruitModel?]?
+  var fruits: [FruitModel?] = []
+  
+  private let dataProvider: FruitDataProvider
+  
+  init(dataProvider: FruitDataProvider) {
+    self.dataProvider = dataProvider
+  }
+  
+  func loadFruits(completion: @escaping () -> Void) {
+    dataProvider.getAllFruits { fruits, error in
+      if let fruits = fruits {
+        self.fruits = fruits
+      }
+      completion()
+    }
+  }
 }
 
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class ViewController: UIViewController {
   
-  var viewModel: HomeViewModel = HomeViewModel()
+  var viewModel: HomeViewModel = HomeViewModel(dataProvider: RequestManager.shared)
   var selectedFruit: FruitModel?
   @IBOutlet weak var fruitsTableView: UITableView!
   
@@ -28,16 +43,27 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     self.navigationController?.navigationBar.topItem?.title = "Fruitspedia"
     self.navigationController?.navigationBar.tintColor = UIColor.black
     
-    RequestManager.shared.getAllFruits { fruits, error in
-      self.viewModel.fruits = fruits
+    viewModel.loadFruits {
       DispatchQueue.main.async {
         self.fruitsTableView.reloadData()
       }
     }
   }
   
+  func navigateToDetail(nibName: String) {
+    let vc = FruitDetailViewController(nibName: nibName, bundle: nil)
+    vc.title = SelectedFruit.shared.fruit?.name
+    if let navigator = navigationController {
+      navigator.pushViewController(vc, animated: true)
+    }
+  }
+}
+
+
+
+extension ViewController: UITableViewDataSource {
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return viewModel.fruits?.count ?? 0
+    return viewModel.fruits.count
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -47,35 +73,21 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     if cell == nil {
       cell = FruitCell.createCell()
     }
-    cell!.setUp(fruitName: viewModel.fruits?[indexPath.row]?.name, fruitSugar: viewModel.fruits?[indexPath.row]?.nutritions.sugar, isCitrus: viewModel.fruits?[indexPath.row]?.genus == "Citrus")
+    cell!.setUp(fruitName: viewModel.fruits[indexPath.row]?.name, fruitSugar: viewModel.fruits[indexPath.row]?.nutritions.sugar, isCitrus: viewModel.fruits[indexPath.row]?.genus == "Citrus")
     return cell!
   }
-  
+}
+
+extension ViewController: UITableViewDelegate {
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     // Preguntamos si cumple el protocolo FruitModel y luego usamos el setter
-    if let selectedFruit = viewModel.fruits?[indexPath.row] as? FruitModel {
+    if let selectedFruit = viewModel.fruits[indexPath.row] {
       SelectedFruit.shared.setFruit(selectedFruit)
     }
     if SelectedFruit.shared.fruit?.genus == "Citrus" {
-      navigateToCitrusDetail()
+      navigateToDetail(nibName: "FruitDetailCitrusViewController")
     } else {
-      navigateToDetail()
-    }
-  }
-  
-  func navigateToCitrusDetail() {
-    let vc = FruitDetailViewController(nibName: "FruitDetailCitrusViewController", bundle: nil)
-    vc.title = SelectedFruit.shared.fruit?.name
-    if let navigator = navigationController {
-      navigator.pushViewController(vc, animated: true)
-    }
-  }
-  
-  func navigateToDetail() {
-    let vc = FruitDetailViewController(nibName: "FruitDetailViewController", bundle: nil)
-    vc.title = SelectedFruit.shared.fruit?.name
-    if let navigator = navigationController {
-      navigator.pushViewController(vc, animated: true)
+      navigateToDetail(nibName: "FruitDetailViewController")
     }
   }
 }

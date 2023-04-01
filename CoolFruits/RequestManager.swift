@@ -53,7 +53,22 @@ class RequestManager {
     self.session = session
   }
   
-  public func getAllFruits(_ completion: @escaping (([FruitModel?]?, Error?) -> Void)) {
+  private func decodeJSON(with decoder: JSONDecoderProtocol, from data: Data, completion: @escaping (([FruitModel?]?, Error?) -> Void)) {
+    do {
+      let decodedObject = try decoder.decode([FruitModel].self, from: data)
+      completion(decodedObject, nil)
+    } catch {
+      completion(nil, NSError())
+    }
+  }
+}
+
+protocol FruitDataProvider {
+  func getAllFruits(_ completion: @escaping ([FruitModel?]?, Error?) -> Void)
+}
+
+extension RequestManager: FruitDataProvider {
+  func getAllFruits(_ completion: @escaping (([FruitModel?]?, Error?) -> Void)) {
     let endpoint = FruitsAPI()
     
     guard let url = endpoint.url else {
@@ -71,14 +86,5 @@ class RequestManager {
         completion(nil, error)
       }
     }.resume()
-  }
-  
-  private func decodeJSON(with decoder: JSONDecoderProtocol, from data: Data, completion: @escaping (([FruitModel?]?, Error?) -> Void)) {
-    do {
-      let decodedObject = try decoder.decode([FruitModel].self, from: data)
-      completion(decodedObject, nil)
-    } catch {
-      completion(nil, NSError())
-    }
   }
 }
